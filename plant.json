@@ -1,0 +1,115 @@
+{
+  "biomes": {
+    "DESERT": {
+      "TREE": {
+        "sunlight": "FULL_SUN",
+        "waterNeed": "MEDIUM",
+        "evergreen": false,
+        "heightM": 6.0,
+        "spreadM": 7.0,
+        "toxic": false,
+        "phenology": ["SEEDLING", "VEGETATIVE", "DORMANT"]
+      },
+      "FLOWER": {
+        "sunlight": "FULL_SUN",
+        "waterNeed": "LOW",
+        "evergreen": false,
+        "heightM": 0.3,
+        "spreadM": 0.3,
+        "bloom": {"color": "yellow", "season": "SPRING"},
+        "phenology": ["SEEDLING", "BUD", "FLOWER", "DORMANT"]
+      },
+      "SUCCULENT": {
+        "sunlight": "FULL_SUN",
+        "waterNeed": "LOW",
+        "evergreen": true,
+        "heightM": 0.5,
+        "spreadM": 0.7,
+        "toxic": true,
+        "phenology": ["SEEDLING", "VEGETATIVE"]
+      },
+      "FERN": {
+        "sunlight": "SHADE",
+        "waterNeed": "MEDIUM",
+        "evergreen": false,
+        "heightM": 0.5,
+        "spreadM": 0.6,
+        "phenology": ["SEEDLING", "VEGETATIVE", "DORMANT"]
+      }
+    },
+
+    "TEMPERATE": {
+      "TREE": {
+        "sunlight": "PART_SHADE",
+        "waterNeed": "MEDIUM",
+        "evergreen": false,
+        "heightM": 12.0,
+        "spreadM": 10.0,
+        "phenology": ["SEEDLING", "VEGETATIVE", "FRUIT", "DORMANT"]
+      },
+      "FLOWER": {
+        "sunlight": "FULL_SUN",
+        "waterNeed": "MEDIUM",
+        "evergreen": false,
+        "heightM": 0.5,
+        "spreadM": 0.4,
+        "bloom": {"color": "blue", "season": "SPRING"},
+        "phenology": ["SEEDLING", "BUD", "FLOWER", "FRUIT", "DORMANT"]
+      },
+      "SUCCULENT": {
+        "sunlight": "FULL_SUN",
+        "waterNeed": "LOW",
+        "evergreen": true,
+        "heightM": 0.3,
+        "spreadM": 0.4,
+        "phenology": ["SEEDLING", "VEGETATIVE", "DORMANT"]
+      },
+      "FERN": {
+        "sunlight": "SHADE",
+        "waterNeed": "HIGH",
+        "evergreen": false,
+        "heightM": 0.8,
+        "spreadM": 1.0,
+        "phenology": ["SEEDLING", "VEGETATIVE", "DORMANT"]
+      }
+    },
+
+    "TROPICAL": {
+      "TREE": {
+        "sunlight": "FULL_SUN",
+        "waterNeed": "HIGH",
+        "evergreen": true,
+        "heightM": 15.0,
+        "spreadM": 8.0,
+        "toxic": false,
+        "phenology": ["SEEDLING", "VEGETATIVE", "FRUIT"]
+      },
+      "FLOWER": {
+        "sunlight": "PART_SHADE",
+        "waterNeed": "MEDIUM",
+        "evergreen": false,
+        "heightM": 0.6,
+        "spreadM": 0.4,
+        "bloom": {"color": "scarlet", "season": "SUMMER"},
+        "phenology": ["SEEDLING", "VEGETATIVE", "BUD", "FLOWER", "FRUIT"]
+      },
+      "SUCCULENT": {
+        "sunlight": "FULL_SUN",
+        "waterNeed": "LOW",
+        "evergreen": true,
+        "heightM": 0.4,
+        "spreadM": 0.5,
+        "toxic": false,
+        "phenology": ["SEEDLING", "VEGETATIVE"]
+      },
+      "FERN": {
+        "sunlight": "PART_SHADE",
+        "waterNeed": "HIGH",
+        "evergreen": true,
+        "heightM": 1.0,
+        "spreadM": 1.2,
+        "phenology": ["SEEDLING", "VEGETATIVE"]
+      }
+    }
+  }
+}
