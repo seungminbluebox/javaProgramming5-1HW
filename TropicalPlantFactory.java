@@ -1,13 +1,14 @@
 import java.util.Arrays;
 
+// 열대 식물을 만드는 공장
 public class TropicalPlantFactory implements IPlantFactory {
 
     @Override
     public Plant newInstance(PlantType type, String commonName) {
-        // 1. 필수값으로 빌더를 생성
+        // 1. 열대(TROPICAL) 서식지에 맞는 필수값으로 빌더 생성
         Plant.PlantBuilder builder = new Plant.PlantBuilder(type, Biome.TROPICAL, commonName);
 
-        // 2. plant.json 데이터를 기반으로 선택 속성을 설정
+        // 2. 식물 종류(type)에 따라 json 데이터 기반으로 기본 속성 설정
         switch (type) {
             case TREE:
                 builder.sunlight(Sunlight.FULL_SUN)
@@ -47,7 +48,7 @@ public class TropicalPlantFactory implements IPlantFactory {
                 break;
         }
 
-        // 3. 최종적으로 빌드된 객체를 반환
+        // 3. 설정이 완료된 빌더로 최종 객체 생성 및 반환
         return builder.build();
     }
 }

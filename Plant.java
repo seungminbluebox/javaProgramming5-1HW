@@ -15,7 +15,7 @@ public class Plant {
     private final Bloom bloom;
     private final List<Phenophase> phenology;
 
-    // [핵심 1] 생성자는 private! 오직 PlantBuilder를 통해서만 호출 가능
+    // 생성자는 private! 오직 PlantBuilder를 통해서만 호출 가능
     private Plant(PlantBuilder builder) {
         this.commonName = builder.commonName;
         this.type = builder.type;
@@ -39,7 +39,42 @@ public class Plant {
     public PlantType getType() {
         return type;
     }
-    // ... 나머지 모든 필드에 대한 Getter ...
+
+    public Biome getBiome() {
+        return biome;
+    }
+
+    public Sunlight getSunlight() {
+        return sunlight;
+    }
+
+    public WaterNeed getWaterNeed() {
+        return waterNeed;
+    }
+
+    public boolean isEvergreen() {
+        return evergreen;
+    }
+
+    public double getHeightM() {
+        return heightM;
+    }
+
+    public double getSpreadM() {
+        return spreadM;
+    }
+
+    public boolean isToxic() {
+        return toxic;
+    }
+
+    public Bloom getBloom() {
+        return bloom;
+    }
+
+    public List<Phenophase> getPhenology() {
+        return phenology;
+    }
 
     @Override
     public String toString() {
@@ -51,13 +86,13 @@ public class Plant {
 
     // --- 내부 Builder 클래스 ---
     public static class PlantBuilder {
-        // [핵심 2] Plant의 속성과 동일한 필드를 가짐
+        // Plant의 속성과 동일한 필드를 가짐
         // 필수 속성
         private final PlantType type;
         private final Biome biome;
         private final String commonName;
 
-        // 선택 속성 (기본값으로 초기화)
+        // 선택 속성
         private Sunlight sunlight = null;
         private WaterNeed waterNeed = null;
         private boolean evergreen = false;
@@ -67,14 +102,14 @@ public class Plant {
         private Bloom bloom = null;
         private List<Phenophase> phenology = null;
 
-        // [핵심 3] Builder 생성자는 '필수' 속성만 받음
+        // Builder 생성자는 '필수' 속성만 받음
         public PlantBuilder(PlantType type, Biome biome, String commonName) {
             this.type = Objects.requireNonNull(type);
             this.biome = Objects.requireNonNull(biome);
             this.commonName = Objects.requireNonNull(commonName);
         }
 
-        // [핵심 4] 선택 속성은 메소드 체이닝 방식으로 설정
+        // 선택 속성은 메소드 체이닝 방식으로 설정
         public PlantBuilder sunlight(Sunlight sunlight) {
             this.sunlight = sunlight;
             return this;
@@ -115,7 +150,7 @@ public class Plant {
             return this;
         }
 
-        // [핵심 5] build() 메소드에서 최종 객체를 생성하며 유효성 검증 수행
+        // build() 메소드에서 최종 객체를 생성하며 유효성 검증 수행
         public Plant build() {
             // --- 유효성 검증 로직 (PDF 9페이지) ---
             validate();
@@ -145,6 +180,12 @@ public class Plant {
                     && (phenology == null || !phenology.contains(Phenophase.DORMANT))) {
                 throw new IllegalStateException(
                         "Validation Error: Temperate deciduous plants must have a DORMANT phenophase.");
+            }
+
+            // yourcode
+            // 5) 독성이 있는 식물은 열매를 맺을 수 없음
+            if (toxic && (phenology != null && phenology.contains(Phenophase.FRUIT))) {
+                throw new IllegalStateException("Validation Error: Toxic plants cannot bear fruit.");
             }
         }
     }

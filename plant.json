@@ -16,7 +16,7 @@
         "evergreen": false,
         "heightM": 0.3,
         "spreadM": 0.3,
-        "bloom": {"color": "yellow", "season": "SPRING"},
+        "bloom": { "color": "yellow", "season": "SPRING" },
         "phenology": ["SEEDLING", "BUD", "FLOWER", "DORMANT"]
       },
       "SUCCULENT": {
@@ -53,7 +53,7 @@
         "evergreen": false,
         "heightM": 0.5,
         "spreadM": 0.4,
-        "bloom": {"color": "blue", "season": "SPRING"},
+        "bloom": { "color": "blue", "season": "SPRING" },
         "phenology": ["SEEDLING", "BUD", "FLOWER", "FRUIT", "DORMANT"]
       },
       "SUCCULENT": {
@@ -90,7 +90,7 @@
         "evergreen": false,
         "heightM": 0.6,
         "spreadM": 0.4,
-        "bloom": {"color": "scarlet", "season": "SUMMER"},
+        "bloom": { "color": "scarlet", "season": "SUMMER" },
         "phenology": ["SEEDLING", "VEGETATIVE", "BUD", "FLOWER", "FRUIT"]
       },
       "SUCCULENT": {

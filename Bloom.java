@@ -1,4 +1,4 @@
-public class Bloom {
+public class Bloom {// 식물의 개화 정보를 담는 클래스
     private String color;
     private Season peakSeason;
 
